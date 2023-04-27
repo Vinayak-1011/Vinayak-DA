@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+class Employee {
+private:
+    double salary;
+    int workHours;
+public:
+    void getInfo(double s, int w) {
+        salary = s;
+        workHours = w;
+    }
+    void AddSal() {
+        if (salary < 500)
+            salary += 10;
+    }
+    void AddWork() {
+        if (workHours > 6)
+            salary += 5;
+    }
+    void printSalary() {
+        cout << "Final Salary: $" << salary << endl;
+    }
+};
+
+int main() {
+    Employee emp;
+    double salary;
+    int workHours;
+    cout << "Enter salary: $";
+    cin >> salary;
+    cout << "Enter work hours per day: ";
+    cin >> workHours;
+    emp.getInfo(salary, workHours);
+    emp.AddSal();
+    emp.AddWork();
+    emp.printSalary();
+    return 0;
+}
